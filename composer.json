@@ -8,6 +8,7 @@
         "sensio/framework-extra-bundle": "^3.0",
         "symfony/flex": "^1.0",
         "symfony/framework-bundle": "^3.3",
+        "symfony/profiler-pack": "^1.0",
         "symfony/twig-bundle": "^3.3",
         "symfony/yaml": "^3.3"
     },
