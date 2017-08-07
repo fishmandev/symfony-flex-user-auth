@@ -5,12 +5,25 @@
             <li {{ route ==  'index' ? 'class="active"' }}>
                 <a href="{{ path('index') }}">Home</a>
             </li>
-            <li {{ route ==  'admin' ? 'class="active"' }}>
-                <a href="{{ path('admin') }}">Admin</a>
-            </li>
-            <li {{ route ==  'login' ? 'class="active"' }}>
-                <a href="{{ path('login') }}">Sign in</a>
-            </li>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <li {{ route ==  'admin' ? 'class="active"' }}>
+                    <a href="{{ path('admin') }}">Admin</a>
+                </li>
+            {% else %}
+                <li {{ route ==  'login' ? 'class="active"' }}>
+                    <a href="{{ path('login') }}">Sign in</a>
+                </li>
+            {% endif %}
         </ul>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <p class="navbar-text">Signed in as {{ app.user.username }}</p>
+                </li>
+                <li>
+                    <a href="{{ path('logout') }}">Logout</a>
+                </li>
+            </ul>
+        {% endif %}
     </div>
 </nav>
