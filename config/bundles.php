@@ -7,4 +7,5 @@ return [
     'Symfony\Bundle\TwigBundle\TwigBundle' => ['all' => true],
     'Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle' => ['all' => true],
     'Symfony\Bundle\WebProfilerBundle\WebProfilerBundle' => ['dev' => true, 'test' => true],
+    'Symfony\Bundle\SecurityBundle\SecurityBundle' => ['all' => true],
 ];
